@@ -10,8 +10,10 @@ RUN apt-get -y update
 # for disable interactive mod apt-get
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
 
+RUN apt-get -y update 
+
 # install some develop tools
-RUN apt-get install -y gcc git make nano check clang-format cppcheck lcov gcc g++ python3  gcovr
+RUN apt-get install -y gcc make nano check clang-format gcovr git valgrind htop
 
 #install zsh and oh-my-zsh
 RUN apt-get install -y neofetch zsh curl

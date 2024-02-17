@@ -1,4 +1,4 @@
 docker stop tester
-docker rmi dock_s21_for_testing:arhnex
-docker build -t dock_s21_for_testing:arhnex .
-docker run -it --name tester --rm -v $(pwd):/project dock_s21_for_testing:arhnex /bin/zsh
+docker rmi ubuntu_tester:arhnex
+docker build -t ubuntu_tester:arhnex .
+docker run -it --name tester --rm -v $(pwd):/project ubuntu_tester:arhnex /bin/zsh
