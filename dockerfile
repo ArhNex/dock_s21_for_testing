@@ -13,7 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tz
 RUN apt-get -y update 
 
 # install some develop tools
-RUN apt-get install -y gcc make nano check clang-format gcovr git valgrind htop
+RUN apt-get install -y gcc make nano check clang-format gcovr git valgrind htop lcov
 
 #install zsh and oh-my-zsh
 RUN apt-get install -y neofetch zsh curl
