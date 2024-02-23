@@ -24,3 +24,6 @@ RUN echo neofetch >> ~/.zshrc
 RUN echo "alias sh='bash'" >> ~/.zshrc
 
 RUN apt-get -y upgrade 
+RUN mkdir /project
+
+WORKDIR /project
