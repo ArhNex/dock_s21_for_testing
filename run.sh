@@ -4,14 +4,12 @@ echo Ubuntu_tester from ArhNex
 is_ubuntu_tester=`docker images | grep ubuntu_tester | awk '{print $1}'`
 if [ $is_ubuntu_tester == ubuntu_tester ]
     then
-        docker run -it --name tester --rm -v $(pwd):/project ubuntu_tester:arhnex /bin/zsh
+        docker run -it --name tester --rm -v .:/project ubuntu_tester:arhnex /bin/zsh
 else
-    sh_first_run= `sh first_run_docker.sh`
-    echo $sh_first_run
     docker stop tester
     docker rmi ubuntu_tester:arhnex
     docker build -t ubuntu_tester:arhnex .
-    docker run -it --name tester --rm -v $(pwd):/project ubuntu_tester:arhnex /bin/zsh
+    docker run -it --name tester --rm -v .:/project ubuntu_tester:arhnex /bin/zsh
 fi
 
 
